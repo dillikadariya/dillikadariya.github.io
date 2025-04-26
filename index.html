@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Guide to Machine Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-50 p-6">
+
+    <!-- Header -->
+    <header class="container mx-auto text-center mb-10">
+        <h1 class="text-4xl font-semibold text-blue-700 hover:text-blue-600 transition duration-300">
+            A Simple Guide to Machine Learning
+        </h1>
+        <p class="text-lg text-gray-600 mt-2">An Overview of My Machine Learning Journey</p>
+    </header>
+
+
+    <!-- Tab Navigation -->
+    <div class="container mx-auto mb-8">
+        <div class="flex justify-center border-b border-gray-200">
+            <button class="tab-button py-3 px-6 text-blue-600 font-medium border-b-2 border-blue-600" onclick="openTab(event, 'home-tab')">Home</button>
+            <button class="tab-button py-3 px-6 text-gray-500 font-medium hover:text-blue-600" onclick="openTab(event, 'projects-tab')">Projects</button>
+            <button class="tab-button py-3 px-6 text-gray-500 font-medium hover:text-blue-600" onclick="openTab(event, 'resources-tab')">Resources</button>
+        </div>
+    </div>
+
+    <!-- Home Tab -->
+    <div id="home-tab" class="tab-content active container mx-auto">
+        <section class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Understanding Machine Learning</h2>
+            <p class="text-gray-700 mb-4">
+                Machine learning is a branch of artificial intelligence (AI) that focuses on enabling computers to learn from data and make decisions or predictions without being explicitly programmed for each specific task. Rather than following hard-coded rules, machine learning models identify patterns and make inferences, improving their performance over time with more experience or data.
+                The success of a machine learning model is typically measured by how accurately it performs a task, such as classifying emails, recommending products, or recognizing speech, based on what it has learned from past data.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-green-600 mb-4">Types of Machine Learning</h3>
+            <p class="text-grey-700 mb-4">
+                Machine learning is generally categorized into three main types based on how learning is carried out: supervised, unsupervised, and reinforcement learning. A fourth category, deep learning, is a specialized subset that deserves separate attention.
+
+            </p>
+            <div class="space-y-4">
+                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <h4 class="text-xl font-semibold text-blue-600 mb-2">Supervised Learning</h4>
+                    <p class="text-gray-700">
+                    In supervised learning, the algorithm is trained on a labeled dataset—this means each training example includes both the input data (x) and the correct output (y). The model learns a mapping function f(x) ≈ y that can predict outputs for new, unseen inputs.
+                    <br><br>
+                    Applications:
+                    <br>
+                    Email spam detection<br>
+                    Sentiment analysis<br>
+                    Stock price prediction
+                     <br> <br>
+
+                    Types of Problems:
+                    <br>
+                    Regression:
+                    Predicts continuous values.
+                    Example: Predicting housing prices based on size, location, and number of rooms.
+                    <br>
+                    Classification:
+                    Predicts discrete categories.
+                    Example: Determining whether a tumor is benign or malignant.
+                    <br>
+                    Multiple Input Vectors:
+                    Real-world problems often involve many features (e.g., age, income, education level). Machine learning models such as Support Vector Machines (SVMs) or Random Forests can handle high-dimensional input spaces effectively.
+                    Example: Credit scoring models use numerous financial attributes to predict loan eligibility.
+                    </p>
+
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                        <li><strong>Regression:</strong>  The labels (y) are continuous values.  Example: predicting housing prices based on size.</li>
+                        <li><strong>Classification:</strong> The labels (y) are discrete categories.  Example: determining whether a tumor is cancerous or not.</li>
+                        <li><strong>Multiple Input Vectors:</strong>  Supervised learning can handle inputs with multiple features (x, y, z, ...).  Many machine learning algorithms operate in high-dimensional spaces.  Example: Support Vector Machines can use very high-dimensional input.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <h4 class="text-xl font-semibold text-blue-600 mb-2">Unsupervised Learning</h4>
+                    <p class="text-gray-700">
+                       Unsupervised learning deals with data that has no associated labels. The algorithm tries to learn the underlying structure or distribution of the data by identifying patterns, groupings, or anomalies.
+                        <be><br>
+                        Applications:
+                        Market segmentation
+                        Anomaly detection in networks
+                        Dimensionality reduction (e.g., for visualization)
+                        <br><br>
+                        Examples:<br>
+                        Clustering: Grouping customers by purchasing behavior using algorithms like K-Means or DBSCAN.
+                            <br>
+                        Dimensionality Reduction: Reducing the number of features while preserving relationships—using PCA (Principal Component Analysis).
+                        <br>Social Network Analysis: Grouping users by shared interests or interactions.
+                        <br>Audio Signal Separation: Isolating voices in noisy environments (the cocktail party problem).
+                        <br>Astronomy: Automatically classifying galaxies based on telescope images.
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                        <li>Example: Social media algorithms grouping users based on profile data (social network problem).</li>
+                        <li>Example: Separating individual voices from mixed audio (cocktail party problem).</li>
+                        <li>Example: Classifying galaxies from astronomical images.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <h4 class="text-xl font-semibold text-blue-600 mb-2">Reinforcement Learning</h4>
+                    <p class="text-gray-700">
+                        Reinforcement learning (RL) focuses on training agents to make a sequence of decisions by interacting with an environment. The agent learns through trial and error, receiving rewards for beneficial actions and penalties for harmful ones.
+                        <br><br>Applications:
+                        <br>Game playing (e.g., AlphaGo)
+                        <br>Robotics and control systems
+                        <br>Recommendation systems that adapt based on feedback
+                        <br><br>
+                        Example:
+                        <br>Training a robotic arm to pick up objects using a reward system.
+                        <br>Self-driving cars that learn optimal driving behavior by simulation.
+                        <br>Reinforcement Learning is often modeled using concepts like Markov Decision Processes (MDPs), which define states, actions, rewards, and transitions.
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                         <li>Example: Training a dog with treats and scolding.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <h4 class="text-xl font-semibold text-blue-600 mb-2">Deep Learning</h4>
+                    <p class="text-gray-700">
+                       Deep learning is a subfield of machine learning that uses artificial neural networks with multiple layers—known as deep neural networks—to model complex, non-linear relationships in data.
+                        These models automatically extract relevant features from raw data, making them particularly useful for tasks involving images, audio, or natural language.
+                        <br><br>
+                        Examples of Deep Learning Architectures:
+                        <br>
+                        Artificial Neural Networks (ANNs): Basic structure of interconnected neurons.
+                        <br>Convolutional Neural Networks (CNNs): Specialized for image and video recognition.
+                        <br>Recurrent Neural Networks (RNNs): Useful for sequential data like time series or text.
+                        <br>Transformers & BERT (Bidirectional Encoder Representations from Transformers): State-of-the-art models in natural language processing (NLP).
+                        <br><br>Applications:
+                        <br>Image classification (e.g., recognizing faces or handwritten digits)
+                        <br>Natural language processing (e.g., chatbots, translation)
+                        <br>Speech-to-text systems
+                        <br>Autonomous driving
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Projects Tab -->
+    <div id="projects-tab" class="tab-content container mx-auto">
+        <section class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Projects</h2>
+            <div class="space-y-6">
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-purple-600 mb-4">Implementing Gradient Descent Algorithm</h3>
+                    <p class="text-gray-700 mb-2">
+                        Implemented gradient descent algorithm with varying learning rates.
+                    </p>
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                        <li><a href="#data-manipulation-project-description" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">View Description</a></li>
+                        <li><a href="#data-manipulation-project-code" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">View Code</a></li>
+                        <li><a href="https://docs.google.com/document/d/1IPcEd1rhPKIkNWMxXEZB_MXByT8d-1sSgb7rtjh10Ls/edit?tab=t.0" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">Download Report</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-purple-600 mb-4">Iris Species Classification</h3>
+                    <p class="text-gray-700 mb-2">
+                        Used a Logistic Regression model to classify Iris species.
+                    </p>
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                        <li><a href="#iris-classification-project-description" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">View Description</a></li>
+                        <li><a href="#iris-classification-project-code" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">View Code</a></li>
+                        <li><a href="https://docs.google.com/document/d/1ChrXE3FBZv2hAA_VFhIEPohwvPLUfexVz_v6Uv7ur-w/edit?usp=sharing" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">Download Report</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-purple-600 mb-4">KNN Implementation and Evaluation</h3>
+                    <p class="text-gray-700 mb-2">
+                        Implemented KNN, K-fold cross-validation, and hyperparameter tuning.
+                    </p>
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                        <li><a href="#knn-project-description" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">View Description</a></li>
+                        <li><a href="#knn-project-code" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">View Code</a></li>
+                        <li><a href="https://docs.google.com/document/d/1fLtSyCI8edCaiHIql7LxWvYkYk-VrLjkObfkLo5PB34/edit?usp=sharing" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">Download Report</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-purple-600 mb-4">XOR Operation with Neural Network</h3>
+                    <p class="text-gray-700 mb-2">
+                        Trained a neural network to perform the XOR operation using MLPClassifier.
+                    </p>
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                         <li><a href="#xor-project-description" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">View Description</a></li>
+                        <li><a href="#xor-project-code" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">View Code</a></li>
+                        <li><a href="https://docs.google.com/document/d/1SN-k2hOO7LK0Yi78wZmDj8aTrI0eg30pp2UQSZW_JKM/edit?tab=t.0#heading=h.okk4d0cgp3zq" class="text-blue-500 hover:text-blue-700 transition duration-200 inline-flex items-center">Download Report</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="data-manipulation-project-description" class="container mx-auto mt-16 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Gradient Descent - Description</h2>
+        <p class="text-gray-700">
+            Implemented gradient descent with varying learning rates to understand its effect on convergence.
+        </p>
+    </section>
+
+    <section id="data-manipulation-project-code" class="container mx-auto mt-16 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Implementing Gradient Descent Algorithm - Code</h2>
+        <pre class="bg-gray-100 rounded-md p-4 overflow-x-auto">
+            <code class="text-sm text-gray-800">
+                # This Python script implements and visualizes a linear regression model using Batch Gradient Descent with a dynamic learning rate.
+            # Various learning rates (alpha) can be tested to find the rate that gives the least mean squared error (mse).
+
+            import numpy as np
+            import matplotlib.pyplot as plt
+
+            # generates sample observations for train/test purposes
+            def generate_observations(num_observations):
+                X = np.random.randint(1, num_observations, size=num_observations)
+                Y = 3 * X + 2 + np.random.normal(0, 1.5, size=num_observations)  # function + random noise with a mean 0 and sd 1.5 to simulate real-world data variability
+                return X, Y
+
+
+            def plot_data(X, Y, w=None):
+                # plots the generated X,Y data points
+                plt.scatter(X, Y, label="Data points")
+                plt.ylabel("Target variable, $y$")
+                plt.xlabel("Input variable, $x$")
+
+                if w is not None:      # if weights w(i) are availabe, use them for prediction stats and plot the fitted line
+                    y_hat = get_predictions(X, w)
+                    mse = get_mean_squared_error(Y, y_hat)
+                    plt.plot(X, y_hat, color="green", label=f"Fitted Line\nw={w}, MSE={mse:.4f}")
+                    plt.legend()
+
+                plt.show()
+
+
+            def get_predictions(X, w):
+                #Computes predictions based on a linear model , w[0] is is the bias term (intercept) and w[1] (slope).
+                return w[0] + w[1] * X
+
+            # calculates the mean squared error (mse)
+            def get_mean_squared_error(y, y_hat):
+                return np.mean((y - y_hat) ** 2)
+
+
+            def plot_training_loss(loss_values):
+                #Plots the training loss over iterations
+                plt.figure(figsize=(8, 5))
+                plt.plot(range(1, len(loss_values) + 1), loss_values, marker="o", linestyle="-", color="blue")
+                plt.xlabel("Training Iterations")
+                plt.ylabel("Mean Squared Error (MSE)")
+                plt.title("Training Loss Over Iterations (Dynamic Learning Rate)")
+                plt.grid(True)
+                plt.show()
+
+
+            def train_model_dynamic_lr(X, y, w, alpha=0.01, num_iter=100, decay=0.001, decay_step=10):
+                # implements Batch Gradient Descent with a Dynamic Learning Rate to train the model
+                m = len(X)
+                X = np.array(X)
+                y = np.array(y)
+
+                loss_values = []
+
+                for it in range(num_iter):
+                    # Make Predictions for the Entire Batch
+                    y_hat = get_predictions(X, w)
+
+                    # Calculate Error for Each Observation
+                    error = y - y_hat
+
+                    # Compute gradients using results from partial derivatives of mse (loss function) with respect to w0 and w1
+                    grad_w0 = -2 * np.mean(error)  # Mean gradient for bias
+                    grad_w1 = -2 * np.mean(error * X)  # Mean gradient for slope
+
+                    # Decay the learning rate every `decay_step` iterations
+                    if it % decay_step == 0:
+                        alpha = alpha / (1 + decay * it)  # (add 1 to avoid denominator being zero)
+
+                    # Update weights using standard gradient descent w(i) ← w(i) − α * gradient
+                    w[0] -= alpha * grad_w0
+                    w[1] -= alpha * grad_w1
+
+                    # Calculate and Store MSE for the Entire Batch
+                    mse = get_mean_squared_error(y, get_predictions(X, w))
+                    loss_values.append(mse)
+                    print(f"Iteration {it + 1}: MSE = {mse:.4f}, Learning Rate = {alpha:.6f}, w = {w}")
+
+                return w, loss_values
+
+
+            if __name__ == "__main__":
+                np.random.seed(42)  # set random state to ensure reproducibility
+                X, y = generate_observations(10)
+
+                # Initialize weights
+                w = [-10.0, 0.0] # Starting with a -10 intercept and 0 slope
+                w_new, loss_values = train_model_dynamic_lr(X, y, w)
+
+                print("Final Weights:", w_new)
+                plot_data(X, y, w_new)
+                plot_training_loss(loss_values)  # Visualize training loss over iterations
+            </code>
+        </pre>
+    </section>
+
+    <section id="iris-classification-project-description" class="container mx-auto mt-16 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Iris Species Classification - Description</h2>
+        <p class="text-gray-700">
+            Utilized a Logistic Regression model to classify Iris species, demonstrating proficiency in classification tasks.
+        </p>
+    </section>
+
+    <section id="iris-classification-project-code" class="container mx-auto mt-16 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Iris Species Classification - Code</h2>
+        <pre class="bg-gray-100 rounded-md p-4 overflow-x-auto">
+            <code class="text-sm text-gray-800">
+                import numpy as np
+                import matplotlib.pyplot as plt
+                from sklearn import datasets
+                from sklearn.linear_model import LogisticRegression
+                from sklearn.metrics import accuracy_score, confusion_matrix
+                from sklearn.model_selection import train_test_split
+                import random
+
+                # Trains and evaluates logistic regression models with 6 different training sizes.
+                def train_and_evaluate(X, Y, train_sizes):
+                    X_train_full, X_test, Y_train_full, Y_test = train_test_split(X, Y, train_size=0.8, stratify=Y, random_state=42)
+                    results = {} # initialize a dictionary for containing accuracy scores for each training size.
+
+                    for size in train_sizes:
+                        indices = random.sample(range(len(X_train_full)), size)
+                        X_train = X_train_full[indices]
+                        Y_train = Y_train_full[indices]
+
+                        logit_model = LogisticRegression(max_iter=1000)
+                        logit_model.fit(X_train, Y_train)
+
+
+                        Y_predictions = logit_model.predict(X_test)
+                        accuracy = accuracy_score(Y_test, Y_predictions)
+                        results[size] = accuracy
+                    return results
+
+
+                # plot
+                def plot_learning_curve(train_sizes, accuracies):
+                    plt.figure(figsize=(8, 6))
+                    plt.plot(train_sizes, accuracies, marker=".", linestyle='-')
+                    plt.xlabel("Training Size")  # Corrected label
+                    plt.ylabel("Accuracy")  # Corrected label
+                    plt.title("Test Accuracy vs. Training Set Size")
+                    plt.grid(True)
+                    plt.xticks(train_sizes)
+                    plt.show()
+
+                def main():
+                    #1 Load the Iris dataset
+                    iris = datasets.load_iris()
+                    X = iris.data  # Features
+                    Y = iris.target  # Target labels
+
+                    #2 Define training sizes
+                    train_sizes = [20, 40, 60, 80, 100, 120]
+
+                    #3 Train and evaluate
+                    results = train_and_evaluate(X, Y, train_sizes)
+
+                    #4 Print results
+                    print("\nTraining Size vs. Accuracy:")
+                    for size, accuracy in results.items():
+                        print(f"Training Size: {size} -> Accuracy: {accuracy:.4f}")
+
+                    #5 Plot
+                    plot_learning_curve(train_sizes, list(results.values()))
+
+                    # 6 Confusion Matrix for Full Training Set
+                    X_train_full, X_test, Y_train_full, Y_test = train_test_split(X, Y, train_size=0.8, stratify=Y, random_state=42)
+                    logit_model_full = LogisticRegression(max_iter=1000)
+                    logit_model_full.fit(X_train_full, Y_train_full)
+                    Y_pred_full = logit_model_full.predict(X_test)
+
+
+                    cm = confusion_matrix(Y_test, Y_pred_full)
+
+                    plt.imshow(cm, cmap='Blues')
+                    plt.colorbar()
+                    plt.xticks(np.arange(cm.shape[1]), labels=iris.target_names)  # Add x-axis labels
+                    plt.yticks(np.arange(cm.shape[0]), labels=iris.target_names)  # Add y-axis labels
+                    plt.xlabel("Predicted Label")
+                    plt.ylabel("True Label")
+
+                    # Add text annotations inside the heatmap cells
+                    for i in range(cm.shape[0]):
+                        for j in range(cm.shape[1]):
+                            plt.text(j, i, cm[i, j], ha='center', va='center', color='w')  # 'w' for white text
+
+                    plt.show()
+                if __name__ == "__main__":
+                    main()
+            </code>
+        </pre>
+    </section>
+
+    <section id="knn-project-description" class="container mx-auto mt-16 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">KNN Implementation and Evaluation - Description</h2>
+        <p class="text-gray-700">
+            Implemented the K-Nearest Neighbors algorithm, performed K-fold cross-validation, and conducted hyperparameter tuning to optimize model performance.
+        </p>
+    </section>
+
+    <section id="knn-project-code" class="container mx-auto mt-16 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">KNN Implementation and Evaluation - Code</h2>
+        <pre class="bg-gray-100 rounded-md p-4 overflow-x-auto">
+            <code class="text-sm text-gray-800">
+                import matplotlib.pyplot as plt
+                import seaborn as sns
+                import pandas as pd
+                from sklearn.datasets import load_digits
+                from sklearn.model_selection import train_test_split, KFold
+                from sklearn.neighbors import KNeighborsClassifier
+                from sklearn.metrics import classification_report, confusion_matrix
+                import numpy as np
+                # 1. a) load the MINST dataset
+                digits = load_digits()
+                df = pd.DataFrame(data=digits.data, columns=digits.feature_names)
+                df["target"] = digits.target
+                # 1. c) Choose a digit for the positive class
+                positive_digit = 3
+                # Create a binary target variable: 1 for the positive digit, 0 for others
+                df["binary_target"] = (df["target"] == positive_digit).astype(int)
+                # Calculate the relative frequency of the positive class
+                positive_frequency = df["binary_target"].mean()
+                # Print the relative frequency
+                print(f"Relative frequency of digit {positive_digit}: {positive_frequency:.4f}")
+                # 1. b) Separate features (X) and target (y)
+                X = df.drop("target", axis=1) # Features (pixel values)
+                y = df["target"] # Target labels (digits 0-9)
+                # 1. b) Train-test split
+                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                # 2. b) k=3 fold cross validation on the training set
+                kfold = KFold(n_splits=3, random_state=42, shuffle=True)
+                # 2. c) hyperparameter tuning using randomized search
+                for k in range(1, 15, 2): # use odd k values to avoid ties
+
+                knn = KNeighborsClassifier(n_neighbors=k)
+
+                all_reports = []
+
+                all_confusions = []
+
+                for train_index, val_index in kfold.split(X_train, y_train):
+
+                X_train_fold, X_val_fold = X_train.iloc[train_index], X_train.iloc[val_index]
+
+                y_train_fold, y_val_fold = y_train.iloc[train_index], y_train.iloc[val_index]
+
+                knn.fit(X_train_fold, y_train_fold)
+
+                predicted = knn.predict(X_val_fold)
+
+                names = [str(digit) for digit in digits.target_names]
+
+                report = classification_report(y_val_fold, predicted, target_names=names, output_dict=True)
+
+                all_reports.append(report)
+
+                confusion = confusion_matrix(y_val_fold, predicted)
+
+                all_confusions.append(confusion)
+
+                # Average results accross 3 fold cross validation
+
+                avg_report = {}
+
+                for class_name in names:
+
+                avg_report[class_name] = {}
+
+                for metric in report[class_name]:
+
+                avg_report[class_name][metric] = np.mean([report[class_name][metric] for report in all_reports])
+
+                # Calculate average metrics
+
+                avg_accuracy = np.mean([report['accuracy'] for report in all_reports])
+
+                avg_precision = np.mean([report['macro avg']['precision'] for report in all_reports])
+
+                avg_recall = np.mean([report['macro avg']['recall'] for report in all_reports])
+
+                avg_f1 = np.mean([report['macro avg']['f1-score'] for report in all_reports])
+
+                print(f"k = {k}")
+
+                print(f"Average Accuracy: {avg_accuracy:.4f}")
+
+                print(f"Average Precision: {avg_precision:.4f}")
+
+                print(f"Average Recall: {avg_recall:.4f}")
+
+                print(f"Average F1-score: {avg_f1:.4f}")
+
+                # Average confusion matrix accross 3 fold cross validation
+
+                avg_confusion = np.mean(all_confusions, axis=0)
+
+
+                # Plot average confusion matrix
+
+                plt.figure()
+
+                sns.heatmap(pd.DataFrame(avg_confusion, index=range(10), columns=range(10)), annot=True, cmap="nipy_spectral_r")
+
+                plt.title(f"Average Confusion Matrix (k={k})")
+
+                plt.xlabel('Predicted')
+
+                plt.ylabel('Actual')
+
+                plt.show()
+            </code>
+        </pre>
+    </section>
+
+
+    <section id="xor-project-description" class="container mx-auto mt-16 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">XOR Operation with Neural Network - Description</h2>
+        <p class="text-gray-700">
+            Trained a neural network using the MLPClassifier from scikit-learn to perform the XOR operation, demonstrating the capability of neural networks to learn non-linear functions.
+        </p>
+    </section>
+            <section id="xor-project-code" class="container mx-auto mt-16 p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">XOR Operation with Neural Network - Code</h2>
+            <pre class="bg-gray-100 rounded-md p-4 overflow-x-auto">
+            <code class="text-sm text-gray-800">
+                from sklearn.neural_network import MLPClassifier
+                import numpy as np
+                import matplotlib.pyplot as plt
+
+                # XOR data
+                X = [[0, 0], [1, 1], [0, 1], [1, 0]]
+                y = [0, 0, 1, 1]
+
+                # Prepare to store accuracy values
+                layer_range = range(1, 11)  # number of layers
+                neuron_range = range(1, 11)  # number of neurons per layer
+                accuracy_matrix = np.zeros((len(layer_range), len(neuron_range)))
+
+                # Loop over combinations of layer count and neurons per layer
+                for i, num_layers in enumerate(layer_range):
+                    for j, neurons_per_layer in enumerate(neuron_range):
+                        # Create hidden layer configuration
+                        hidden_layers = tuple([neurons_per_layer] * num_layers)
+
+                        # Define and train the model
+                        clf = MLPClassifier(
+                            solver='lbfgs',
+                            alpha=1e-5,
+                            hidden_layer_sizes=hidden_layers,
+                            random_state=42,
+                            max_iter=1000
+                        )
+                        clf.fit(X, y)
+
+                        # Compute accuracy
+                        predictions = clf.predict(X)
+                        accuracy = np.mean(predictions == y)
+                        accuracy_matrix[i, j] = accuracy
+
+                # Plotting the heatmap
+                plt.figure(figsize=(5, 4))
+                plt.imshow(accuracy_matrix, cmap='viridis', interpolation='nearest')
+                plt.colorbar(label='Accuracy')
+                plt.xticks(np.arange(10), neuron_range)
+                plt.yticks(np.arange(10), layer_range)
+                plt.xlabel('Neurons per Layer')
+                plt.ylabel('Number of Layers')
+                plt.title('XOR Accuracy for Varying Hidden Layers and Neurons')
+                plt.show()
+
+                </code>
+        </pre>
+   </section>
+    </div>
+
+    <!-- Resources Tab -->
+    <div id="resources-tab" class="tab-content container mx-auto">
+        <section class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Learning Resources</h2>
+            <p class="text-gray-700">Here are some helpful resources for diving deeper into Machine Learning:</p>
+            <div class="space-y-6">
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-orange-600 mb-4">YouTube Channels</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .5 6.186C0 8.07 0 12 0 12s0 3.93.5 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.378.505 9.378.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="https://www.youtube.com/c/3blue1brown" class="text-blue-600 hover:text-blue-800 font-medium">3Blue1Brown</a>
+                                <p class="text-gray-600 text-sm mt-1">Excellent visual explanations of machine learning concepts</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .5 6.186C0 8.07 0 12 0 12s0 3.93.5 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.378.505 9.378.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" class="text-blue-600 hover:text-blue-800 font-medium">Stanford CS229: Machine Learning</a>
+                                <p class="text-gray-600 text-sm mt-1">Free Full Stanford Course in Machine Learning</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .5 6.186C0 8.07 0 12 0 12s0 3.93.5 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.378.505 9.378.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="https://www.youtube.com/c/Deeplearningai" class="text-blue-600 hover:text-blue-800 font-medium">DeepLearning.AI</a>
+                                <p class="text-gray-600 text-sm mt-1">Andrew Ng's channel with in-depth deep learning tutorials</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-orange-600 mb-4">Online Courses</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="https://www.coursera.org/learn/machine-learning" class="text-blue-600 hover:text-blue-800 font-medium">Machine Learning by Stanford University</a>
+                                <p class="text-gray-600 text-sm mt-1">Foundational course taught by Andrew Ng</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="https://www.fast.ai/" class="text-blue-600 hover:text-blue-800 font-medium">Fast.ai Practical Deep Learning</a>
+                                <p class="text-gray-600 text-sm mt-1">Practical approach to deep learning with PyTorch</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="https://www.edx.org/course/cs50s-introduction-to-artificial-intelligence-with-python" class="text-blue-600 hover:text-blue-800 font-medium">CS50's Introduction to AI with Python</a>
+                                <p class="text-gray-600 text-sm mt-1">Harvard's introduction to AI principles and implementations</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-orange-600 mb-4">Books and Documentation</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="https://www.deeplearningbook.org/" class="text-blue-600 hover:text-blue-800 font-medium">Deep Learning</a>
+                                <p class="text-gray-600 text-sm mt-1">By Ian Goodfellow, Yoshua Bengio, and Aaron Courville</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="https://scikit-learn.org/stable/documentation.html" class="text-blue-600 hover:text-blue-800 font-medium">Scikit-Learn Documentation</a>
+                                <p class="text-gray-600 text-sm mt-1">Comprehensive documentation for the popular ML library</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                            </svg>
+                             </div>
+                        <div>
+                            <a href="https://huggingface.co/models" class="text-blue-600 hover:text-blue-800 font-medium">Hugging Face Models and Datasets for Deep Learning</a>
+                            <p class="text-gray-600 text-sm mt-1">The platform where the machine learning community collaborates on models, datasets, and applications</p>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+    </div>
+
+    <!-- JavaScript for Tab Switching -->
+    <script>
+    function openTab(evt, tabId) {
+        // Hide all tab content
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach((content) => {
+            content.classList.remove('active');
+        });
+
+        // Remove active class from all tab buttons
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach((button) => {
+            button.classList.remove('border-blue-600', 'text-blue-600');
+            button.classList.add('text-gray-500');
+        });
+
+        // Show the selected tab
+        document.getElementById(tabId).classList.add('active');
+
+        // Add active classes to the clicked button
+        evt.currentTarget.classList.add('border-blue-600', 'text-blue-600');
+        evt.currentTarget.classList.remove('text-gray-500');
+    }
+    </script>
+
+</body>
+</html>
